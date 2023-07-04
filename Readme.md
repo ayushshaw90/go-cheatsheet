@@ -36,8 +36,100 @@ func main() {
 ### Data Types 
 
 - Integer types : 
-<br>
-`uint8`, `uint16`, `uint32`, `uint64` 
-<br>
-unsigned integers of 8, 16, 32 and 64 bits size respectively
-<br>
+
+	- unsigned :
+		- `uint8` : unsigned 8 bit integer
+		- `uint16` : unsigned 16 bit integer
+		- `uint32` : unsigned 32 bit integer
+		- `uint64` : unsigned 64 bit integer
+	- signed :
+		- `int8` : signed 8 bit integer
+		- `int16` : signed 16 bit integer
+		- `int32` : signed 32 bit integer
+		- `int64` : signed 64 bit integer
+
+- Floating types :
+	- `float32`, `float64` : 32 and 64 bit IEEE-754 floating point numbers
+	- `complex64`, `complex128` : floating complex numbers with real and imaginary parts each of 32bit and 64bit respectively
+- Boolean type: 
+	- `bool`: can be `true` or `false`
+- String type:
+	- `string` : a sequence of characters
+---
+### Example 1
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var a int8 // an unsigned integer variable of 8 bits
+	a = 127
+	c := -128 // also an integer
+	fmt.Println(a, c) // 127 -128
+	var b float32 = -255.12 // a float variable of 32 bits
+	fmt.Println(b)
+}
+```
+### Example 2
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var fname, lname string // string variable
+	fname = "Ayush"
+	lname = "Shaw"
+	fmt.Println("Name : ", fname, lname) // Name :  Ayush Shaw
+}
+
+```
+
+- To declare a new variable, we use var keyword, and specify the data type.
+- If we assign a value to a variable while declaring it, we can omit the datatype (it is inferred).
+- To declare a variable and assign its value simultaneously, we can use `:= `
+
+### Example 3
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var fruit1 string // string variable
+	fruit1, fruit2 := "Mango", "Apple" 
+	
+	// fruit1 is already declared but the compiler does not throw an error because,
+	// fruit2 is a newly declared variable.
+	// if we have at least 1 newly declared variable in the left side of :=, the compiler won't throw error
+	
+	fmt.Println("Favourite fruits :", fruit1, fruit2) // Favourite fruits : Mango Apple
+	
+	fruit1, fruit2 = "Orange", "Pineapple"
+	// we can assign values to multiple variables simultaneously. 
+	// here, we use '=' as both the variables fruit1 and fruit2 have already been declared
+	fmt.Println("Favourite fruits :", fruit1, fruit2) // Favourite fruits : Orange Pineapple
+}
+```
+- We can declare and assign multiple variables by separating them with `,`
+- We use `:=` to declare a variable and initialize it with a value
+
+### Example 4
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var is_studying bool // boolean variable
+	fmt.Println(is_studying) // uninitialized variables have default zero value
+	// for bool, default value is false
+	// for int, it is 0
+	// for float64, it is 0.0
+	// for string, it is ""
+}
+
+```
+- Every uninitialized variable has a default zero value
