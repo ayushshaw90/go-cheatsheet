@@ -19,6 +19,28 @@ func main() { // Execution of program starts here
 ```
 -----------
 
+### Compilation and formatting
+We have a file named test_code.go
+
+To run a go program
+```shell
+go run test_code.go
+```
+
+To compile a go program
+```shell
+go build test_code.go
+```
+We get, a test_code file which can be executed using the command:
+```shell
+./test_code
+```
+
+To format a go program:
+```shell
+go fmt test_code.go
+```
+---
 ## Declaring variables
 
 ```go
@@ -133,3 +155,30 @@ func main() {
 
 ```
 - Every uninitialized variable has a default zero value
+----
+## Type conversions
+A value can be converted from one data type to other using functions like `int()`, `float64()` etc.
+```go
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func main() {
+	var num float64 = 23.23 //float value
+	y := int(num) // y = 23 (int value)
+	fmt.Println(y)
+	fmt.Println(reflect.TypeOf(y)) // using reflect package, we can print the data type of a variable
+	z := float64(y) // z = 23 but it's data type is float64
+	fmt.Println(z)
+	fmt.Println(reflect.TypeOf(z))
+	// output: 
+	// 23
+	// int
+	// 23
+	// float64
+}
+
+```
