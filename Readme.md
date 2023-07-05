@@ -106,7 +106,6 @@ func main() {
 	lname = "Shaw"
 	fmt.Println("Name : ", fname, lname) // Name :  Ayush Shaw
 }
-
 ```
 
 - To declare a new variable, we use var keyword, and specify the data type.
@@ -152,7 +151,6 @@ func main() {
 	// for float64, it is 0.0
 	// for string, it is ""
 }
-
 ```
 - Every uninitialized variable has a default zero value
 ----
@@ -180,5 +178,21 @@ func main() {
 	// 23
 	// float64
 }
+```
+---
+## Constants
+Constants in go can be declared with the syntax: `const var_name var_type = value`
 
+### Example 1
+```go
+package main
+
+import "fmt"
+
+func main() {
+	const PI float64 = 3.142
+	radius := 10.0
+	area := PI * radius * radius
+	fmt.Printf("Area = %f\n", area) // Area = 314.200000
+}
 ```
