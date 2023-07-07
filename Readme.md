@@ -196,3 +196,57 @@ func main() {
 	fmt.Printf("Area = %f\n", area) // Area = 314.200000
 }
 ```
+---
+
+## For loop
+Syntax
+```
+for <condition> {
+	expression1
+	expression2
+	...
+}
+```
+or
+``` 
+for <initialization; condition; increment> {
+	loop body
+}
+```
+
+### Example:
+```go
+i := 1
+for i<=10 {
+	fmt.PrintLn(i)
+	i++
+}
+
+for j:=1;j<=10;j++ {
+	fmt.Println(j)
+}
+//both the loops perform same operations, i.e., print numbers 1 to 10
+```
+
+----
+## If/else statement
+### Syntax:
+``` 
+if condition {
+	statements1
+} else {
+	statements2
+}
+// if condition is true, statements1 will be executed, else, statements2 will be executed.
+//else clause is optional
+```
+
+### Example 1:
+```go
+package main
+import "fmt"
+func main() {
+	// sort the elements of an array
+	
+}
+```
