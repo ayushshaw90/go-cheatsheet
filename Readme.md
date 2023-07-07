@@ -246,7 +246,61 @@ if condition {
 package main
 import "fmt"
 func main() {
-	// sort the elements of an array
-	
+	// find the sum of numbers from 1 to n whose last digit is 0 or 5
+	var n int
+	n = 100
+	sum:=0
+	for i:=1; i<=n; i+=1 {
+		lastDigit := i%10
+		if lastDigit == 0 || lastDigit == 5 {
+			sum+=i
+		}
+		 
+	}
+	fmt.Println("Sum of numbers from 1 to ",n," = ",sum)
 }
+```
+---
+## Arrays
+### Syntax:
+``` 
+var var_name [size]data_type
+
+//access array elements by
+
+var_name[index]
+
+// here index start from 0 to (size-1), both inclusive
+```
+### Example:
+```go
+package main
+
+import "fmt"
+
+func main() {
+	// print all prime numbers between 1 and 100
+	
+	var isComposite [100]bool // declaration of array
+	// by default, each array element has zero value (false in this case)
+	
+	// Here, we make the composite elements true
+	for i := 2; i <= 100; i += 1 {
+		dex := i - 1 // as arrays are 0 indexed, we subtract 1 from the number i to get index
+		if isComposite[dex] == true {
+			continue
+		}
+		for j := i + i; j <= 100; j += i {
+			isComposite[j-1] = true
+		}
+	}
+	fmt.Println("Prime numbers between 1 and 100 are:")
+	for i := 1; i < 100; i++ {
+		if isComposite[i] == false {
+			fmt.Print((i + 1), " ")
+		}
+	}
+	fmt.Println()
+}
+
 ```
